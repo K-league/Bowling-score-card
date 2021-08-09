@@ -7,8 +7,13 @@ class Table extends Component {
         super(props);
         // todo: create the state with an array that has 10 objects
         // each object contains the state for one frame
-
+        let frames = [];
+        for (var i = 0; i < 10; i++) {
+            frames.push({first: 0, second: 0, runningTotal:0})
+        }
+        this.state = {frames};
         // todo: bind update totals to this so the frame children can update table's state
+        this.updateTotals = this.updateTotals.bind(this);
     }
     
     componentDidMount() {
