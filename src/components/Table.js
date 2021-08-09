@@ -21,14 +21,31 @@ class Table extends Component {
     }
 
     updateTotals(event) {
+        let frames = this.state.frames;
+        let rawValue = event.target.value;
         // get frame id, input value, and name of the shot from the input name
         // clean up value by checking if it's empty, not a number (NaN), and parsing it
+        if (isNaN(rawValue)) {
+            if(rawValue.toLowerCase() === "x"){
+                rawValue = 10;
+            }
+        } else if (rawValue !== ""){
+            rawValue = parseInt(rawValue);
+        }
         // retrieve all frames from state, use frame id to alter state for frame 
+        let value = rawValue;
+        let frame = parseInt(event.target.attributes['frameId'].value);
+        let shot = event.target.name;
+        frames[frame][shot] = value;
+        console.log("update successful");
         
-        
-        // TODO: calculate running totals using all the frames
-
         // update state of table with setState()
+        this.setState({ updateTotals: value}, () => {
+            console.log(this.state.updateTotals, 'updateTotals1');
+        })
+        
+         //calculate running totals using all the frames
+         
     }
     render() {
         console.log("render table");
