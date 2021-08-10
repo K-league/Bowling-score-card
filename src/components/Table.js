@@ -29,6 +29,7 @@ class Table extends Component {
             if(rawValue.toLowerCase() === "x"){
                 rawValue = 10;
             }
+            //if for / spare
         } else if (rawValue !== ""){
             rawValue = parseInt(rawValue);
         }
@@ -42,10 +43,13 @@ class Table extends Component {
         // update state of table with setState()
         this.setState({ updateTotals: value}, () => {
             console.log(this.state.updateTotals, 'updateTotals1');
-        })
+        });
         
-         //calculate running totals using all the frames
-         
+        //calculate running totals using all the frames
+        frames[frame][shot] = value;
+        console.log("updated");
+
+        
     }
     render() {
         console.log("render table");
@@ -56,7 +60,8 @@ class Table extends Component {
         }
         frames.push(<Frame frameId={10} final={true} key={10} />);
         return frames;
-    }
+    
+    };
 }
 
 export default Table;
