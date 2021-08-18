@@ -1,9 +1,9 @@
 # Bowling Card
 
-As a Bowler I want to be able to enter a list of bowling frame scores so that I can see the prgress and total score of my game.
+As a Bowler I want to be able to enter a list of bowling frame scores so that I can see the progress and total score of my game.
 
 ## Getting Started
-In order to play with this app you need to clone the repo as shown below
+In order to play with this app you need to clone the repo as shown below:
 ```sh
 $ git clone https://github.com/K-league/Bowling-score-card.git
 ```
